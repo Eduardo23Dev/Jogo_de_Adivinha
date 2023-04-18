@@ -1,5 +1,5 @@
 const myButton = document.getElementById("myButton");
-const randomNumber = Math.floor(Math.random() * 10) + 1;
+const randomNumber = Math.floor(Math.random() * 11);
 let cont = 0;
 myButton.addEventListener("click", (ev) => {
   ev.preventDefault;
