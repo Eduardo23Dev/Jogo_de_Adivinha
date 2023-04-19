@@ -99,7 +99,3 @@ form button {
   text-align: center;
   color: #34355b;
 }
-button:hover,
-#playAgain:hover {
-  filter: brightness(1.2);
-}
