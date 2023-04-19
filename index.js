@@ -1,39 +1,40 @@
 const myButton = document.getElementById("myButton");
 const randomNumber = Math.floor(Math.random() * 11);
+console.log(randomNumber);
 const allowedKeys = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-let cont = 0;
-let inputTest = document.getElementById("myInput");
-inputTest.addEventListener("keydown", (ev) => {
+let guessCount = 0;
+let guessInputValid = document.getElementById("guess");
+guessInputValid.addEventListener("keydown", (ev) => {
   ev.preventDefault();
   if (allowedKeys.includes(ev.key)) {
-    inputTest.value += ev.key;
+    guessInputValid.value += ev.key;
     return;
   }
   if (ev.key === "Backspace") {
-    inputTest.value = inputTest.value.slice(0, -1);
+    guessInputValid.value = guessInputValid.value.slice(0, -1);
   }
 });
 myButton.addEventListener("click", (ev) => {
   ev.preventDefault();
-  cont++;
-  let input = document.getElementById("myInput");
-  if (input.value === randomNumber.toString()) {
+  guessCount++;
+  let guessInput = document.getElementById("guess");
+  if (guessInput.value === randomNumber.toString()) {
     const screen_1 = document.querySelector(".screen_1");
     screen_1.style.display = "none";
     const screen_2 = document.querySelector(".screen_2");
     screen_2.style.display = "flex";
-    let tentativas = document.getElementById("tentativas");
-    tentativas.innerText = cont;
-  } else if (input.value > 10 || input.value < 0) {
+    let attempts = document.getElementById("attempts");
+    attempts.innerText = guessCount;
+  } else if (guessInput.value > 10 || guessInput.value < 0) {
     alert("Voce so pode escolher numeros entre 0 e 10!");
-    input.value = "";
-    input.focus();
-  } else if (input.value === "") {
+    guessInput.value = "";
+    guessInput.focus();
+  } else if (guessInput.value === "") {
     alert("Voce precisa digitar algum numero entre 0 e 10!");
-    input.focus();
+    guessInput.focus();
   } else {
     alert("Voce errou!");
-    input.value = "";
-    input.focus();
+    guessInput.value = "";
+    guessInput.focus();
   }
 });
