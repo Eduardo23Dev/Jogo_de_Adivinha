@@ -1,7 +1,6 @@
 function Game() {
   const guessButton = document.getElementById("guessButton");
   const randomNumber = Math.floor(Math.random() * 11);
-  console.log(randomNumber);
   const allowedKeys = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
   let guessCount = 0;
   let guessInput = document.getElementById("guess");
