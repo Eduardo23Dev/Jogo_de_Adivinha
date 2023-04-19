@@ -1,8 +1,9 @@
-const myButton = document.getElementById("myButton");
+const guessButton = document.getElementById("guessButton");
 const randomNumber = Math.floor(Math.random() * 11);
 const allowedKeys = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 let guessCount = 0;
 let guessInput = document.getElementById("guess");
+guessInput.focus();
 guessInput.addEventListener("keydown", (ev) => {
   ev.preventDefault();
   if (allowedKeys.includes(ev.key)) {
@@ -12,9 +13,11 @@ guessInput.addEventListener("keydown", (ev) => {
   if (ev.key === "Backspace") {
     guessInput.value = guessInput.value.slice(0, -1);
   }
+  if (ev.key === "Enter") {
+    validateGuess();
+  }
 });
-myButton.addEventListener("click", (ev) => {
-  ev.preventDefault();
+function validateGuess() {
   guessCount++;
   let guess = document.getElementById("guess");
   if (guess.value === randomNumber.toString()) {
@@ -36,4 +39,6 @@ myButton.addEventListener("click", (ev) => {
     guess.value = "";
     guess.focus();
   }
-});
+}
+
+guessButton.addEventListener("click", validateGuess);
