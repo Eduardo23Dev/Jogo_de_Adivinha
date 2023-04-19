@@ -22,15 +22,15 @@
             <h2>Jogo da Adivinhação</h2>
             <p>Adivinhe o número entre 0 e 10</p>
           </div>
-          <form>
-            <input type="number" name="num" id="myInput" min="0" max="10" />
+          <form id="myForm">
+            <input type="number" name="num" id="guess" min="0" max="10" />
             <button type="button" id="myButton">Tente</button>
-          </div>
-          <div class="screen_2">
-            <h2>Acertou em <span id="tentativas"></span> tentativas!</h2>
-            <button id="myButton_2">Jogar novamente</button>
-          </div>
-        </form>
+          </form>
+        </div>
+        <div class="screen_2">
+          <h2>Acertou em <span id="attempts"></span> tentativas!</h2>
+          <button id="myButton_2" form="myForm">Jogar novamente</button>
+        </div>
       </main>
     </div>
   </body>
