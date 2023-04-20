@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Montserrat:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="index.js" defer></script>
+    <title>Jogo de adivinhação</title>
+  </head>
+  <body>
+    <div class="fullContainer">
+      <main>
+        <div class="screen_1">
+          <div class="header">
+            <h2>Jogo da Adivinhação</h2>
+            <p>
+              Adivinhe o número entre 0 e 10 <br /><small
+                ><em
+                  >Valores inválidos ou vazios não removerão uma vida sua</em
+                ></small
+              >
+            </p>
+          </div>
+          <form id="myForm">
+            <input type="number" id="guess" min="0" max="10" />
+            <button type="button" id="guessButton">Tente</button>
+          </form>
+          <section>
+            <p id="lifeTitle">Vidas</p>
+            <div class="lifes">
+              <img src="./img/pngegg.png" alt="" />
+              <img src="./img/pngegg.png" alt="" />
+              <img src="./img/pngegg.png" alt="" />
+              <img src="./img/pngegg.png" alt="" />
+            </div>
+          </section>
+        </div>
+        <div class="screen_2">
+          <h2>
+            Você conseguiu <br />
+            Parabens!
+          </h2>
+          <br />
+          <button class="playAgain" form="myForm">Jogar novamente</button>
+        </div>
+        <div class="screen_3">
+          <h2>Suas vidas acabaram!</h2>
+          <p>O numero correto era: <span id="showRandomNum"></span></p>
+          <button class="playAgain" form="myForm">Jogar novamente</button>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
